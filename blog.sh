@@ -16,4 +16,4 @@ echo '删除旧容器'
 docker stop blog-container
 docker rm blog-container
 echo '启动新容器'
-docker contaier run -p 80:80 -d --name blog-container blog
+docker contaier run -p -d 80:80 --name blog-container blog
