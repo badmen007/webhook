@@ -13,7 +13,7 @@ npm run build
 echo "开始构建镜像"
 docker build -t blog:1.0 .
 echo '删除旧容器'
-docker stop blog-container
-docker rm blog-container
+docker stop blog
+docker rm blog
 echo '启动新容器'
-docker contaier run -p -d 80:80 --name blog-container blog
+docker run -p -d 80:80 --name blog blog
