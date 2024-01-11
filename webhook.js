@@ -27,12 +27,16 @@ const server = http.createServer((req, res) => {
 
       if (event == "push") {
         let payload = JSON.parse(body);
-        console.log(payload);
         let child = spawn("sh", [`./${payload.repository.name}.sh`]);
+        console.log(payload.repository.name, 'payload');
         let buffers = [];
         child.stdout.on("data", function (buffer) {
           buffers.push(buffer);
         });
+        child.stdout.on('end', function() {
+          let logs = Buffer.concat(buffers).toString()
+          console.log(logs)
+        })
       }
     })
   } else {
