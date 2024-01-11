@@ -1,5 +1,6 @@
 import http from 'http'
 import { spawn } from 'child_process'
+import crypto from 'crypto'
 const SECRET = "123456";
 function sign(data) {
   return "sha1=" + crypto.createHmac("sha1", SECRET).update(data).digest("hex");
