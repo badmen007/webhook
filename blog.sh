@@ -9,7 +9,7 @@ git pull origin master
 echo "打包最新代码"
 npm run build
 echo "开始构建镜像"
-docker build -t blog .
+docker build -t blog:1.0 .
 echo '删除旧容器'
 docker stop blog-container
 docker rm blog-container
