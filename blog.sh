@@ -7,6 +7,12 @@ git clean -f
 echo "拉取最新代码"
 git pull origin master
 echo "安装依赖"
+rm -rf .next
+echo '删除.next文件'
+rm -rf node_modules
+echo '删除node_modules'
+rm -rf package-lock.json
+echo '删除package-lock.json'
 pnpm install
 echo "打包最新代码"
 pnpm run build
