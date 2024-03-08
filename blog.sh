@@ -6,6 +6,8 @@ git reset --hard origin/master
 git clean -f
 echo "拉取最新代码"
 git pull origin master
+echo '删除node_modules'
+rm -rf node_modules
 echo "安装依赖"
 pnpm install
 echo "打包最新代码"
